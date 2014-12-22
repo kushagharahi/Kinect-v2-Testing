@@ -1,0 +1,40 @@
+﻿<Window x:Class="KinectTesting.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="Kinect Testing" 
+        Height="1080" Width="1920" WindowState="Maximized" WindowStyle="None">
+    
+    <Window.Resources>
+        <SolidColorBrush x:Key="MediumGreyBrush" Color="#ff6e6e6e" />
+    </Window.Resources>
+
+        <Grid Margin="10 0 10 0"> <!--Gave grid a margin of 10 pixels on each side-->
+
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="*" />
+            <RowDefinition Height="Auto" />
+        </Grid.RowDefinitions>
+            
+        <TextBlock Grid.Row="0"  Margin="0 0 -1 0" HorizontalAlignment="Right" VerticalAlignment="Top" Foreground="{StaticResource MediumGreyBrush}" 
+                       FontFamily="Segoe UI" FontSize="18">
+            Kinect2 Testing
+        </TextBlock>
+            
+        <Label Name="kinectStatus"  Grid.Row="0"  Margin="0 0 -1 0" HorizontalAlignment="Left" VerticalAlignment="Top" 
+                       FontFamily="Segoe UI" FontSize="18"></Label>
+
+        <Viewbox Grid.Row="1" HorizontalAlignment="Center">
+            <Image Name="cFrame" Source="{Binding ImageSource}" Stretch="UniformToFill" />
+        </Viewbox>
+        <Viewbox Grid.Row="1" HorizontalAlignment="Center">
+            <Image Name="drawing" Source="{Binding ImageSource}" Stretch="UniformToFill" />
+        </Viewbox>
+
+        <TextBlock Name="numPlayers" Grid.Row="2"  Margin="0 0 -1 0" HorizontalAlignment="Right" VerticalAlignment="Top" Foreground="{StaticResource MediumGreyBrush}" 
+                       FontFamily="Segoe UI" FontSize="18">
+        </TextBlock>
+
+
+    </Grid>
+</Window>
